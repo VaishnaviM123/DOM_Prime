@@ -20,49 +20,69 @@
 <script>
     function oddevenCheck(){
         var data=Number(n1.value)
-        data%2==0? alert(`${data} is a even number.`) : alert(`${data} is a odd number.`)
+        if(isNaN(data)){
+            alert(`Invalid Input`)
+        }else{
+            data%2==0? alert(`${data} is a even number.`) : alert(`${data} is a odd number.`)
+        }
     }
     function posCheck(){
-        var data=Number(n1.value)
-        data>0? alert(`${data} is a positive number,`) : data==0? alert(`${data} is zero.`) : alert(`${data} is a odd number.`)
+        if(isNaN(data)){
+            alert(`Invalid Input`)
+        }else{
+            var data=Number(n1.value)
+            data>0? alert(`${data} is a positive number,`) : data==0? alert(`${data} is zero.`) : alert(`${data} is a odd number.`)
+        }
     }
     function primeCheck(){
-        // var data=Number(document.querySelector('#age').value)
-        var data=Number(n1.value)
-        if(data<=1){
-            alert(`${data} is not a prime number.`)
+        if(isNaN(data)){
+            alert(`Invalid Input`)
         }else{
-            for(let i=2;i<data;i++){
-                if(data%i==0){
-                    alert(`${data} is not a prime number.`)
-                    break
+            // var data=Number(document.querySelector('#age').value)
+            var data=Number(n1.value)
+            if(data<=1){
+                alert(`${data} is not a prime number.`)
+            }else{
+                for(let i=2;i<data;i++){
+                    if(data%i==0){
+                        alert(`${data} is not a prime number.`)
+                        break
+                    }
                 }
+                alert(`${data} is a prime number`)
             }
-            alert(`${data} is a prime number`)
         }
     }
     function fibCheck(){
-        var data=Number(n1.value)
-        var s="", n2=0,n3=1,n4=0
-        for(let i=1;i<=data;i++){
-            s+=n2+"  "
-            n4=n2+n3
-            n2=n3
-            n3=n4
+        if(isNaN(data)){
+            alert(`Invalid Input`)
+        }else{
+            var data=Number(n1.value)
+            var s="", n2=0,n3=1,n4=0
+            for(let i=1;i<=data;i++){
+                s+=n2+"  "
+                n4=n2+n3
+                n2=n3
+                n3=n4
+            }
+            alert(`${s}`)
         }
-        alert(`${s}`)
     }
     function factCheck(){
-        var data=Number(n1.value)
-        if(data<=0){
-            alert(`Invalid number,`)
+        if(isNaN(data)){
+            alert(`Invalid Input`)
         }else{
-            var fact=1
-            for(let i=data;i>0;i--){
-                fact *=i
+            var data=Number(n1.value)
+            if(data<=0){
+                alert(`Invalid number,`)
+            }else{
+                var fact=1
+                for(let i=data;i>0;i--){
+                    fact *=i
+                }
             }
+            alert(`Factorial of ${data} is ${fact}.`)
         }
-        alert(`Factorial od ${data} is ${fact}.`)
     }
 </script>
 </html>
